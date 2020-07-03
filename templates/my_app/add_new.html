@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+
+    <div class="wrapper">
+        <p>
+        <h3>Registration Form</h3></p></br>
+    </div>
+    <div class="contact-form medium-padding120">
+        <form action="." method="post" class="contact-form">
+            {% csrf_token%}
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+
+                            <input name="age" id="age" type="number" class="input-standard-grey" placeholder="Age"
+                                   min="5" max="120" required>
+                        </div>
+                        <div class="input-field col s6">
+
+                            <input name="name" id="name" class="input-standard-grey" placeholder="Name" required>
+                            <i class="material-icons prefix">account_circle</i>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+
+                            <input name="sex" id="sex" class="input-standard-grey" placeholder="Sex" required>
+
+                        </div>
+                        <div class="input-field col s6">
+
+                            <input name="height" id="height" min="1.30" max="2.20" step="any"
+                                   class="input-standard-grey"
+                                   placeholder="Height" required>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+
+                            <input name="weight" id="weight" min="20" max="200" step="any" class="input-standard-grey"
+                                   placeholder="Weight" required>
+                        </div>
+                        <div class="input-field col s6">
+
+                            <input name="bmi" id="bmi" class="input-standard-grey" placeholder="Bmi" step=".00000001"
+                                   value=""
+                                   jAutoCalc="{weight} / ({height} * {height})">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+
+                            <input name="children" id="children" type="number" class="input-standard-grey"
+                                   placeholder="Children" min="0" max="15">
+                        </div>
+                        <div class="input-field checks col s6">
+                            <div class="col s4">
+                                <!--                            <input name="smoker" id="smoker" class="input-standard-grey" placeholder="Smoker" required>-->
+                                <!--                            <i class="material-icons prefix">smoking_rooms</i>-->
+
+                                <label class="smokerlabel">Smoker</label>
+
+                            </div>
+
+                            <div class="col s4">
+                                <p>
+                                    <label class="top">
+
+                                        <input  class="checkboxes" name="smoker" id="smokeryes" type="checkbox"  value="yes" onClick="uncheck(1)" >
+
+                                        <span>Yes</span>
+                                    </label>
+                                </p>
+                            </div>
+
+                            <div class="col s4">
+                                <p>
+                                    <label class="top">
+                                        <input class="checkboxes" id="smokerno" name="smoker" type="checkbox" checked="checked" value="no" onClick="uncheck(2)">
+                                        <span>No</span>
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+
+                    <input name="region" id="region" class="input-standard-grey" placeholder="Region" required>
+
+                </div>
+                <div class="input-field col s6">
+
+                    <input name="charges" id="charges" type="number" class="input-standard-grey"
+                           placeholder="Charges">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+
+                    <input name="telephone_no" id="telephone_no" class="input-standard-grey"
+                           placeholder="Telephone Num"
+                           required>
+                    <i class="material-icons prefix">phone</i>
+                </div>
+                <div class="input-field col s6">
+
+                    <input type="email" name="address" id="address" class="input-standard-grey" placeholder="Email"
+                           required>
+                    <i class="material-icons prefix">email</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="submit-block table">
+            <div class="col s3">
+                <button id="addbutton" class="waves-effect waves-green btn">
+                    <span class="text">Add Patient</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+
+<!--<script>-->
+<!--    function calculate() {-->
+<!--        var field1 = document.getElementById("weight").value;-->
+<!--        var field2 = document.getElementById("height").value;-->
+
+<!--        var result = parseFloat(field1) /(parseFloat(field2)* parseFloat(field2))-->
+<!--        return result;-->
+
+<!--    }-->
+
+<!--    document.getElementById("bmi").value = calculate();-->
+
+<!--</script>-->
+<!--<script>-->
+<!--    $('#weight').keyup(function(){-->
+<!--    var res = $('#weight').val() / ($('#height').val()*$('#height').val());-->
+<!--    $('#bmi').val(res);-->
+<!--});-->
+<!--</script>-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="http://rawgit.com/c17r/jAutoCalc/master/jAutoCalc.js"></script>
+<script>
+    $(document).ready(function () {
+        var weight = $("#weight");
+        var height = $("#height");
+        weight.keyup(function () {
+            var total = parseFloat(weight.val()) / (height.val() * height.val())
+            $("#bmi").val(total);
+        });
+    });
+</script>
+<script>
+function checkRefresh(value)
+{
+    document.form1.submit();
+}
+
+function uncheck(check)
+{
+    var prim = document.getElementById("smokeryes");
+    var secn = document.getElementById("smokerno");
+    if (prim.checked == true && secn.checked == true)
+    {
+        if(check == 1)
+        {
+            secn.checked = false;
+            checkRefresh();
+        }
+        else if(check == 2)
+        {
+            prim.checked = false;
+            checkRefresh();
+        }
+    }
+
+}
+</script>
+<div class="fixed-action-btn">
+   <a class="btn-floating btn-small floatingupdate" href="#addbutton">
+    <i class="large material-icons">expand_more</i>
+  </a>
+</div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Posts</title>
+</head>
+
+<body>
+<h1>Edit Post</h1>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if error %}
+{{ error }}
+{% endif %}
+
+<form action="" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Edit Post"/>
+</form>
+<br/><br/>
+
+
+</body>
+
+</html>

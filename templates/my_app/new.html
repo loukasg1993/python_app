@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+<div class="container">
+
+    <div class="wrapper">
+        <p>
+        <h3 id="headerpatient">Patient {{form.initial.id}} Info</h3></p></br>
+    </div>
+    <div class="row ">
+            <form action="" method="POST" class="contact-form">
+
+                {% csrf_token%}
+                <div class="row">
+                    <div class="col s6">
+                        <label class="lb">ID</label>
+                        <input name="id" class="input-standard-grey" placeholder="ID" value={{form.initial.id}}
+                               readonly="readonly">
+                    </div>
+                    <div class="col s6">
+                        <label class="lb">Name</label>
+                        <input name="name" class="input-standard-grey" placeholder="Name" value="{{form.initial.name}}">
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <label class="lb">Age</label>
+                        <input name="age" type="number" class="input-standard-grey" placeholder="Age" min="10" max="120"
+                               value="{{form.initial.age}}" required>
+                    </div>
+                    <div class="col s6">
+                        <label class="lb">Sex</label>
+                        <input name="sex" class="input-standard-grey" placeholder="Sex" value="{{form.initial.sex}}"
+                               required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <label class="lb">Height</label>
+                        <input name="height" id="heights" type="number"  min="1.10" max="2.10" step="any"
+                               class="input-standard-grey inputs" placeholder="Height" value="{{form.initial.height}}"
+                               required>
+                    </div>
+                    <div class="col s6">
+                        <label class="lb">Weight</label>
+                        <input name="weight" id="weights" type="number" min="20" max="200" step="any"
+                               class="input-standard-grey updateweight inputs" placeholder="Weight"
+                               value="{{form.initial.weight}}">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <label class="lb">Bmi</label>
+                        <input name="bmi" id="bmis" type="number" class="input-standard-grey" step="any" placeholder="Bmi"
+                        value="{{form.initial.bmi}}">
+                    </div>
+                    <div class="col s6">
+                        <label class="lb">Children</label>
+                        <input name="children" type="number" class="input-standard-grey" placeholder="Children" min="0"
+                               max="15" value="{{form.initial.children}}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <label class="lb">Smoker</label>
+                        <input name="smoker" class="input-standard-grey" placeholder="Smoker"
+                               value="{{form.initial.smoker}}" required>
+                    </div>
+                    <div class="col s6">
+                        <label class="lb">Region</label>
+                        <input name="region" class="input-standard-grey" placeholder="Region"
+                               value="{{form.initial.region}}" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <label class="lb">Charges</label>
+                        <input name="charges" type="number" class="input-standard-grey" placeholder="Charges"
+                               value="{{form.initial.charges}}">
+                    </div>
+                    <div class="col s6">
+                        <label class="lb">Telephone Number</label>
+                        <input name="telephone_no" class="input-standard-grey" placeholder="Telephone Num"
+                               value="{{form.initial.telephone_no}}" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label class="lb">Email</label>
+                        <input type="email" name="address" class="input-standard-grey" placeholder="Email"
+                               value="{{form.initial.address}}" required>
+                    </div>
+                </div>
+
+
+                    <div class="col s6 left">
+
+                        <button class="waves-effect waves-yellow waves_update btn">
+                            <span class="text">Update Patient</span>
+                        </button>
+                    </div>
+
+
+
+            </form>
+
+
+        <form action="/appointment/{{form.initial.id}}" method="POST" class="contact-form">
+       <div style="float: right">
+
+        <button class="waves-effect waves-green makeapp btn">
+            <span class="text">Make Appointment</span>
+        </button>
+       </div>
+       </form>
+    </div>
+</div>
+</br>
+</br>
+
+<div class="container">
+    {% if appointment %}
+<table class="highlight">
+    <thead>
+        <tr>
+
+            <p><h3 id="headerappoint" class="appheader">Appointments</h3></p>
+
+        </tr>
+    </thead>
+    <tr class="center finds" >
+        <th>ID</th>
+        <th>AMKA</th>
+        <th>Bmi</th>
+        <th>Dose</th>
+        <th>Date</th>
+        <th></th>
+
+
+
+    </tr>
+    <tbody>
+     {% for item in appointment%}
+
+        <tr >
+            <td >{{item.id}}</td>
+            <td >{{item.amka}}</td>
+            <td>{{item.bmi}}</td>
+            <td>{{item.dose}}</td>
+            <td>{{item.date}}</td>
+            <td>
+             <form action="/delete/{{ item.id }}/" method="POST">
+             <button type="submit" class="waves-effect waves-red deletes btn">
+                        Delete</button>
+
+             </form>
+
+
+
+             </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    {% else %}
+    <h4>No Appointments</h4>
+    {% endif %}
+    </br>
+    </br>
+    </br>
+    </br>
+    </div>
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-small floatingupdate" href="#headerpatient">
+    <i class="large material-icons">expand_less</i>
+  </a>
+    <a class="btn-floating btn-small floatingupdate" href="#headerappoint">
+    <i class="large material-icons">expand_more</i>
+  </a>
+</div>
+
+{% endblock content %}

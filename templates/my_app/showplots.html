@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block charts %}
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+<div class="row">
+    <div class="container">
+    <div class="col s12">
+        <ul id="tabs-swipe-demo" class="tabs">
+            <li class="tab col s3"><a  class="active" href="#plot13"><p class="tabtext">Body Mass Index</p></a></li>
+            <li class="tab col s3"><a  href="#plot25"><p class="tabtext">Dose for 2019</p></a></li>
+            <li class="tab col s3"><a  href="#plot4"><p class="tabtext3">Patient Ages</p></a></li>
+            <li class="tab col s3"><a  href="#plot5"><p class="tabtext4">3D/Density</p></a></li>
+
+        </ul>
+    </div>
+    </div>
+    </div>
+    <div id="plot13" class="col s12">
+
+        <div class="row">
+            <div class="col s6">
+                <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data}}" alt=""
+                     height="500"
+                     ,width="500">
+
+            </div>
+            <div class="col s6">
+                <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data3}}" alt=""
+                     height="500"
+                     ,width="500">
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div id="plot25" class="col s12">
+        <div class="row">
+            <div class="col s6">
+                <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data2}}" alt=""
+                     height="500"
+                     ,width="500">
+            </div>
+            <div class="col s6">
+            <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data5}}" alt=""
+                 height="500"
+                 ,width="500">
+        </div>
+
+        </div>
+
+    </div>
+
+    <div id="plot4" class="col s12">
+        <div class="row">
+             <div class="col s6">
+            <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data6}}" alt=""
+                 height="500"
+                 ,width="500">
+        </div>
+         <div class="col s6">
+                <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data4}}" alt=""
+                     height="500"
+                     ,width="500">
+            </div>
+
+
+    </div>
+        </div>
+ <div id="plot5" class="col s12">
+        <div class="row">
+
+            <div class="col s12">
+                <img class="plots" style="margin-left: 210px" src="data:image/png;base64,{{data11}}" alt=""
+                     height="570"
+                     ,width="600">
+
+            </div>
+            </div>
+
+     <div class="col s12">
+                <img class="plots" style="margin-left: 270px" src="data:image/png;base64,{{data10}}" alt=""
+                     height="570"
+                     ,width="600">
+
+            </div>
+     </div>
+
+
+
+
+{% endblock charts %}

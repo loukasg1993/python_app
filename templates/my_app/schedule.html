@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col s12">
+
+        <form action="/edit/" method="get" style="margin: 0">
+            {% csrf_token%}
+
+            <div class="col s4">
+                <ul><p class="sched">Please Enter a Patient's AMKA:</p>
+                    <i class="material-icons iconse center"><input class="searchbox" type="text" name="content"
+                                                                                  placeholder="Search here...">search</i></ul>
+                <button id="search_submit" type="submit" class="waves-effect waves-purple makeappbtn btn"  >Search
+                </button>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+{% endblock content %}

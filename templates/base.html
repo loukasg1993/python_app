@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Care</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+</head>
+
+<body class="body">
+
+<nav class="#2196f3 blue navbars">
+    <div class="container">
+
+        <div class="nav-wrapper">
+            <div class="row">
+                <div class="col s10">
+
+                    <div class="nav-wrapper">
+                        <form action="/edit/" method="get" style="margin: 0">
+                            <div class="input-field">
+                                <div class="col s2 right">
+                                    <input type="text" name="content" id="search" placeholder="Search by AMKA...">
+
+                                </div>
+                                <div class="col s2 right">
+                                    <button id="search_submit" type="submit" class="waves-effect waves-purple btn">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col s3 left">
+                        <a href="/" class="brand-logo"><i class="material-icons">enhanced_encryption</i>Medical Care</a>
+                    </div>
+                    <ul id="nav-mobile">
+                        <!--                        <meta http-equiv="refresh" content="60"/>-->
+                        <div class="row times right">
+                            <h6>{{curr}}</h6>
+                        </div>
+                        <!--                        <div class="col1 col s3 right">-->
+                        <!--                            <li><a href="/"><i class="material-icons left">home</i>Home</a></li>-->
+                        <!--                        </div>-->
+
+                    </ul>
+                </div>
+                <div class="col s2">
+                    <div class="col s10 right">
+
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li class="taber"><a href="/add/"><i class="material-icons left ">add_circle_outline</i>Add Patient</a>
+
+                            <li class="divider" tabindex="-1"></li>
+                            <li class="taber"><a href="/schedule/"><i class="material-icons left">event</i>Schedule Appointment</a>
+                            </li>
+
+                            </li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li class="taber"><a href="/allappointments/"><i class="material-icons left">date_range</i>View
+                                Appointments</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li class="taber"><a href="/view/"><i class="material-icons left">view_comfy</i>View Patients</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li class="taber"><a href="/showplots/"><i class="material-icons left">show_chart</i>Show Statistics</a>
+                            </li>
+
+
+                        </ul>
+                        <ul class="nav-mobile">
+                            <div class="col s12">
+                                <li><a class="dropdown-trigger" data-target="dropdown1"><i
+                                        class="material-icons iconsa center">list</i></a>
+                                </li>
+                            </div>
+                        </ul>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</nav>
+<div class="container">
+    {% block charts %}
+    <div class="row">
+        <div class="carousel">
+            <a class="carousel-item" href="#one!"><p><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQAbZPArmjTtijBYkscFvL3YMtih-dVwMSMbcpprrdT1Qx-Hoga&usqp=CAU">
+            </p></a>
+
+            <a class="carousel-item" href="#two!"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzn8w8j7MolU4rhVkHMq8P1yjrSOY4HcNwKAcUPU7WCfczWHlW&usqp=CAU"></a>
+            <a class="carousel-item" href="#three!"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQudIj2OE0PoOGxI5jCECVKSYYIcOefNH5li2lHI4CBJqlo_ers&usqp=CAU"></a>
+            <a class="carousel-item" href="#four!"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQruWdmbOyBzL0uCKf47r1ldeTvosLdJMhvD_7pDSL3B5G_M_f&usqp=CAU"></a>
+            <a class="carousel-item" href="#five!"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtyYxU_kwSqp4jXmNVao_4kkQ5YDnZLl50A8FvyliljjJ789Wf&usqp=CAU"></a>
+        </div>
+    </div>
+    {% block content %}
+
+    <div class="row">
+        <div class="col s4">
+
+            <div class="card z-depth-2 hoverable small card1">
+                <div class="card-content">
+                    <h4 align="center"><i class="material-icons">account_box</i> Patients</h4>
+                    <h3 class="">{{patients}}</h3>
+<!--                    <p>Male : {{male}} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp-->
+<!--                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Female :-->
+<!--                        {{female}}</p>-->
+
+                </div>
+
+                <div class="card z-depth-2 hoverable card11">
+                    <div class="card-image image1">
+                        <img class="" src="data:image/png;base64,{{plot8}}" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card z-depth-2 hoverable small card2">
+                <div class="card-content">
+                    <h4 align="center"><i class="material-icons">monetization_on</i> Charges</h4>
+                    <h3><i class="material-icons"> attach_money</i>{{char}}</h3>
+
+
+                </div>
+                <div class="card z-depth-2 hoverable card22">
+                    <div class="card-image image2">
+                        <img class="" src="data:image/png;base64,{{plot7}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card z-depth-2 hoverable small card3">
+                <div class="card-content ">
+                    <h4 align="center"><i class="material-icons">colorize</i>Tomorrow's Dose</h4>
+                    <h3><i class="material-icons"> opacity</i>{{count_dose}} MBq's</h3>
+                </div>
+                 <div class="card z-depth-2 hoverable card33">
+                    <div class="card-image image3">
+                        <img class="" src="data:image/png;base64,{{plot9}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-action-btn">
+  <a class="btn-floating btn-large click-to-toggle orange z-depth-3 "  >
+    <i class="large material-icons">file_download</i>
+    </a>
+
+        <ul>
+
+      <li><a class="btn-floating purple btn tooltipped" data-position="top" data-tooltip="tomorrow dose pdf" href="/pdf"><i class="material-icons">picture_as_pdf</i></a></li>
+            <li><a class="btn-floating yellow btn tooltipped" data-position="top" data-tooltip="last year info pdf" href="/yearpdf"><i class="material-icons">insert_drive_file</i></a></li>
+        <li><a class="btn-floating green btn tooltipped" data-position="top" data-tooltip="tomorrow dose csv" href="{% url 'export_csv' %}"><i class="material-icons">archive</i></a></li>
+        <li><a class="btn-floating blue btn tooltipped" data-position="top" data-tooltip="last year info .csv" href="/year_csv"><i class="material-icons">equalizer</i></a></li>
+
+  </ul>
+
+    </div>
+
+    {% endblock content %}
+</div>
+{% endblock charts%}
+</div>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="http://rawgit.com/c17r/jAutoCalc/master/jAutoCalc.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
+    <script>  $('.dropdown-trigger').dropdown();</script>
+
+    <script>
+        function calculate() {
+            var field1 = document.getElementById("bmi").value;
+
+            var result = 0.0091 * parseFloat(field1) * parseFloat(field1) * parseFloat(field1) - 0.7925 * parseFloat(field1) * parseFloat(field1) + 25.89 * parseFloat(field1) - 79.442
+            return result;
+
+        }
+
+        document.getElementById("dose").value = calculate();
+
+
+    </script>
+    <script>
+        function calculate() {
+            var field1 = document.getElementById("bmi").value;
+
+            var result = 0.0091 * parseFloat(field1) * parseFloat(field1) * parseFloat(field1) - 0.7925 * parseFloat(field1) * parseFloat(field1) + 25.89 * parseFloat(field1) - 79.442
+            var n = result.toFixed(4);
+            return n;
+
+        }
+
+        document.getElementById("dose").value = calculate();
+
+
+    </script>
+    <script>
+        $(".inputs").on('input', function () {
+            var w = document.getElementById("weights").value;
+            w = parseFloat(w);
+            var h = document.getElementById("heights").value;
+            h = parseFloat(h);
+            var b = w / (h ** 2);
+            document.getElementById("bmis").value = Math.round((b + Number.EPSILON) * 1000) / 1000;
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.tabs').tabs();
+        });
+    </script>
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      direction: 'left',
+      hoverEnabled: false
+    });
+  });
+    $(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+
+  });
+
+</script>
+<script>
+    $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+</script>
+</body>
+</html>

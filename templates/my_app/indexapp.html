@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table class="highlight">
+
+        <tr>
+
+            <h3 id="apointmentsview">Appointments</h3></br>
+
+        </tr></br>
+
+     <thead>
+    <tr class="finds" >
+        <th>AMKA</th>
+        <th>BMI</th>
+        <th>Dose</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+     {% for item in appointment%}
+        <tr >
+            <td >{{item.amka}}</td>
+            <td >{{item.bmi}}</td>
+            <td>{{item.dose}}</td>
+            <td>{{item.date}}</td>
+
+             <td>
+             <form action="delete/{{ item.id }}/" method="POST">
+             <button type="submit" class="waves-effect waves-red deleteapp btn">
+                        Delete</button>
+
+             </form>
+             </td>
+        </tr>
+
+
+    {% endfor %}
+
+     </br>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if appointment.has_previous %}
+            <li class="waves-effect"><a href="?page=1"><i class="material-icons"> first_page</i></a></li>
+           <li class="waves-effect"> <a href="?page={{ appointment.previous_page_number }}"><i class="material-icons"> chevron_left</i></a></li>
+        {% endif %}
+
+        <span class="current">
+            <li>Page {{ appointment.number }} of {{ appointment.paginator.num_pages }}.</li>
+        </span>
+
+        {% if appointment.has_next %}
+             <li class="waves-effect"><a href="?page={{ appointment.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+             <li class="waves-effect"> <a href="?page={{ appointment.paginator.num_pages }}"><i class="material-icons">last_page</i></a></li>
+        {% endif %}
+    </span>
+
+    </div>
+    </br>
+    </tbody>
+</table>
+    </br>
+    <div class="row">
+<div class="pagination right">
+    <span class="step-links">
+        {% if appointment.has_previous %}
+            <li class="waves-effect"><a href="?page=1"><i class="material-icons"> first_page</i></a></li>
+           <li class="waves-effect"> <a href="?page={{ appointment.previous_page_number }}"><i class="material-icons"> chevron_left</i></a></li>
+        {% endif %}
+
+        <span class="current">
+            <li id="bottom">Page {{ appointment.number }} of {{ appointment.paginator.num_pages }}.</li>
+        </span>
+
+        {% if appointment.has_next %}
+             <li class="waves-effect"><a href="?page={{ appointment.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+             <li class="waves-effect"> <a href="?page={{ appointment.paginator.num_pages }}"><i class="material-icons">last_page</i></a></li>
+        {% endif %}
+    </span>
+</div>
+    </div>
+    </br>
+ </br>
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-small floatingupdate" href="#apointmentsview">
+    <i class="large material-icons">expand_less</i>
+  </a>
+    <a class="btn-floating btn-small floatingupdate" href="#bottom">
+    <i class="large material-icons">expand_more</i>
+  </a>
+</div>
+{% endblock content %}
