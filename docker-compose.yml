@@ -19,3 +19,8 @@ services:
       - "8000:8000"
     depends_on:
       - db
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8082:80"
