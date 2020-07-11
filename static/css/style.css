@@ -41,7 +41,19 @@ h2 {
     margin-bottom: 10px;
     padding: 10px;
 }
+/*.datehome{*/
+/*     font-family: Calibri;*/
+/*    border: 2px solid #1e88e5;*/
+/*    font-size: 34px!important;*/
+/*    border-radius: 20px 20px 20px 20px;*/
 
+/*    margin-bottom: 12px;*/
+/*    padding: 12px;*/
+/*    text-align: center!important;*/
+/*    position: center!important;*/
+/*    background-color: #2196f3;!important;*/
+/*    color: aliceblue !important;*/
+/*}*/
 .waves-purple {
     width: 70%;
     background-color: #26c6da !important;
@@ -207,8 +219,8 @@ ul.tabs .indicator {
 
 }
 .dates{
-    color: #e51e1e !important;
-    background-color: #ffe603 !important
+    color: #933333!important;
+    background-color: rgba(238, 139, 21, 0.83) !important
 
 
 
@@ -313,6 +325,7 @@ th{
 }
 .card2{
     top: 1.5cm!important;
+
  background-color: rgba(255, 253, 253, 0.83) !important;
 }
 .card1{

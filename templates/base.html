@@ -21,6 +21,7 @@
 
         <div class="nav-wrapper">
             <div class="row">
+
                 <div class="col s10">
 
                     <div class="nav-wrapper">
@@ -86,8 +87,7 @@
                     </div>
                 </div>
 
-
-            </div>
+                </div>
 
         </div>
     </div>
@@ -137,8 +137,8 @@
         <div class="col s4">
             <div class="card z-depth-2 hoverable small card2">
                 <div class="card-content">
-                    <h4 align="center"><i class="material-icons">monetization_on</i> Charges</h4>
-                    <h3><i class="material-icons"> attach_money</i>{{char}}</h3>
+                    <h4 align="center"><i class="material-icons">event</i> Available Date</h4>
+                    <h3 class="datehome"><i class="material-icons"> event_available</i>{{available_date}}</h3>
 
 
                 </div>
@@ -153,7 +153,7 @@
             <div class="card z-depth-2 hoverable small card3">
                 <div class="card-content ">
                     <h4 align="center"><i class="material-icons">colorize</i>Tomorrow's Dose</h4>
-                    <h3><i class="material-icons"> opacity</i>{{count_dose}} MBq's</h3>
+                    <h3><i class="material-icons"> opacity</i>{{count_dose}} MBq</h3>
                 </div>
                  <div class="card z-depth-2 hoverable card33">
                     <div class="card-image image3">
@@ -172,7 +172,7 @@
 
       <li><a class="btn-floating purple btn tooltipped" data-position="top" data-tooltip="tomorrow dose pdf" href="/pdf"><i class="material-icons">picture_as_pdf</i></a></li>
             <li><a class="btn-floating yellow btn tooltipped" data-position="top" data-tooltip="last year info pdf" href="/yearpdf"><i class="material-icons">insert_drive_file</i></a></li>
-        <li><a class="btn-floating green btn tooltipped" data-position="top" data-tooltip="tomorrow dose csv" href="{% url 'export_csv' %}"><i class="material-icons">archive</i></a></li>
+        <li><a class="btn-floating green btn tooltipped" data-position="top" data-tooltip="tomorrow dose csv" href="/tomorrow_csv"><i class="material-icons">archive</i></a></li>
         <li><a class="btn-floating blue btn tooltipped" data-position="top" data-tooltip="last year info .csv" href="/year_csv"><i class="material-icons">equalizer</i></a></li>
 
   </ul>
@@ -262,5 +262,20 @@
     $('.tooltipped').tooltip();
   });
 </script>
+<script type="text/javascript">
+
+    var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
+    // if zoom level is greater than 75
+    if (browserZoomLevel>80){
+        // find how much
+        zoom_level = 80
+        // add percentage symbol with value
+        zoom_percent = zoom_level+"%"
+        // adjust the browser zoom level
+        document.body.style.zoom = zoom_percent
+      }
+
+</script>
+
 </body>
 </html>

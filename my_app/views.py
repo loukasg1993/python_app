@@ -513,7 +513,8 @@ def home(request):
     male = personal_information.objects.filter(sex="male").count()
     charges = personal_information.objects.all()
     now_date = datetime.today().date()
-
+    available_date= dates1()
+    dates = datetime.strftime(available_date, '%m-%d %H:%M')
     plot = plot7()
     plot84 = plot8()
     plot94 = plot9()
@@ -534,7 +535,7 @@ def home(request):
         char = char + i.charges
     count_dose=round(count_dose,3)
     context = {'curr': current_date, 'patients': patients, 'male': male, 'female': female, 'char': char,
-               'count_dose': count_dose, 'plot7': plot, 'plot8': plot84, 'plot9': plot94}
+               'count_dose': count_dose, 'plot7': plot, 'plot8': plot84, 'plot9': plot94,'available_date':dates}
 
     return render(request, 'base.html', context)
 
@@ -679,27 +680,31 @@ def view_all(request):
 @csrf_exempt
 def add_patient(request):
     if request.method == "POST":
-        try:
-
-            patient_info = personal_information()
-            patient_info.name = request.POST.get('name')
-            patient_info.age = request.POST.get('age')
-            patient_info.sex = request.POST.get('sex')
-            patient_info.height = request.POST.get('height')
-            patient_info.weight = request.POST.get('weight')
-            patient_info.bmi = request.POST.get('bmi')
-            patient_info.children = request.POST.get('children')
-            patient_info.smoker = request.POST.get('smoker')
-            patient_info.region = request.POST.get('region')
-            patient_info.charges = request.POST.get('charges')
-            patient_info.telephone_no = request.POST.get('telephone_no')
-            patient_info.address = request.POST.get('address')
-
-            patient_info.save()
-            context = {'smoker': patient_info.smoker}
-            return render(request, "my_app/add_new.html",context)
-        except:
+        x=dates1()
+        if x==None:
             return redirect('home')
+        else:
+            try:
+
+                patient_info = personal_information()
+                patient_info.name = request.POST.get('name')
+                patient_info.age = request.POST.get('age')
+                patient_info.sex = request.POST.get('sex')
+                patient_info.height = request.POST.get('height')
+                patient_info.weight = request.POST.get('weight')
+                patient_info.bmi = request.POST.get('bmi')
+                patient_info.children = request.POST.get('children')
+                patient_info.smoker = request.POST.get('smoker')
+                patient_info.region = request.POST.get('region')
+                patient_info.charges = request.POST.get('charges')
+                patient_info.telephone_no = request.POST.get('telephone_no')
+                patient_info.address = request.POST.get('address')
+
+                patient_info.save()
+                context = {'smoker': patient_info.smoker}
+                return render(request, "my_app/add_new.html",context)
+            except:
+                return redirect('home')
 
     return render(request, "my_app/add_new.html")
 

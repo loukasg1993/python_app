@@ -16,7 +16,7 @@ urlpatterns = [
     path('delete/<int:appointment_id>/', views.deleteapp),
     path('schedule/', views.schedule),
     path('showplots/', views.showplots),
-    path(r'^csv/$', views.tomorrow_dose, name='export_csv'),
+    path('tomorrow_csv/', views.tomorrow_dose, name='export_csv'),
     path('year_csv/', views.lastyear, name='year_csv'),
     path('pdf/', views.tomorrowpdf, name='pdf'),
     path('yearpdf/', views.lastyearpdf, name='pdf'),
