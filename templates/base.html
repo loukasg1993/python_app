@@ -15,6 +15,7 @@
 </head>
 
 <body class="body">
+<div class="navbar-fixed">
 
 <nav class="#2196f3 blue navbars">
     <div class="container">
@@ -31,7 +32,7 @@
                                     <input type="text" name="content" id="search" placeholder="Search by AMKA...">
 
                                 </div>
-                                <div class="col s2 right">
+                                <div class="col s2 right hide-on-med-and-down">
                                     <button id="search_submit" type="submit" class="waves-effect waves-purple btn">
                                         Search
                                     </button>
@@ -44,7 +45,7 @@
                     </div>
                     <ul id="nav-mobile">
                         <!--                        <meta http-equiv="refresh" content="60"/>-->
-                        <div class="row times right">
+                        <div class="row times right hide-on-med-and-down">
                             <h6>{{curr}}</h6>
                         </div>
                         <!--                        <div class="col1 col s3 right">-->
@@ -93,6 +94,7 @@
     </div>
 
 </nav>
+</div>
 <div class="container">
     {% block charts %}
     <div class="row">
@@ -114,7 +116,7 @@
     {% block content %}
 
     <div class="row">
-        <div class="col s4">
+        <div class="col s12 m4">
 
             <div class="card z-depth-2 hoverable small card1">
                 <div class="card-content">
@@ -134,7 +136,7 @@
 
             </div>
         </div>
-        <div class="col s4">
+        <div class="col s12 m4">
             <div class="card z-depth-2 hoverable small card2">
                 <div class="card-content">
                     <h4 align="center"><i class="material-icons">event</i> Available Date</h4>
@@ -149,7 +151,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s4">
+        <div class="col s12 m4">
             <div class="card z-depth-2 hoverable small card3">
                 <div class="card-content ">
                     <h4 align="center"><i class="material-icons">colorize</i>Tomorrow's Dose</h4>
@@ -183,6 +185,7 @@
 </div>
 {% endblock charts%}
 </div>
+
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
