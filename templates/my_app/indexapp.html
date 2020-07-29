@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<h3 id="apointmentsview">Appointments</h3></br>
+<div class="col s12 center" style="overflow: auto">
 <table class="highlight">
 
-        <tr>
+<!--        <tr>-->
 
-            <h3 id="apointmentsview">Appointments</h3></br>
+<!--            -->
 
-        </tr></br>
+<!--        </tr></br>-->
 
      <thead>
     <tr class="finds" >
@@ -32,7 +33,7 @@
 
              <td>
              <form action="delete/{{ item.id }}/" method="POST">
-             <button type="submit" class="waves-effect waves-red deleteapp btn">
+             <button type="submit" class="waves-effect waves-red deleteapp btn right">
                         Delete</button>
 
              </form>
@@ -65,6 +66,7 @@
     </br>
     </tbody>
 </table>
+</div>
     </br>
     <div class="row">
 <div class="pagination right">

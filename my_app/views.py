@@ -31,6 +31,8 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER
 from my_app.printing import MyPrint,MyPrints
 from io import BytesIO
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Avoids this error: Tcl_AsyncDelete: async handler deleted by the wrong thread
 matplotlib.use('Agg')
@@ -506,6 +508,7 @@ def showplots(request):
 
 
 def home(request):
+
     current_date = datetime.now()
 
     patients = personal_information.objects.all().count()
@@ -831,6 +834,7 @@ def dates1():
 @csrf_exempt
 def make_appointment(request, id):
     current_dates = datetime.now()
+
     obj = get_object_or_404(personal_information, id=id)
     forms = Createform(request.POST or None, instance=obj)
     context = {'form': forms}
@@ -849,6 +853,8 @@ def make_appointment(request, id):
                     obj = forms.save(commit=False)
 
                     obj.save()
+                    # send_mail(subject,message,from_email, to_email,fail_silently=True)
+
 
                     messages.success(request, "You successfully updated the post")
 
@@ -881,6 +887,12 @@ def addapp(request):
             appointments.dose = request.POST.get('dose')
             appointments.date = request.POST.get('date')
             appointments.save()
+            pat = personal_information.objects.get(id=appointments.amka)
+            subject = 'Medical Care Scheduled Appointment '
+            message = 'Mr/Mrs ' + pat.name + ',\n\nYour appointment is scheduled for ' + appointments.date + '.\n\nThank you!'
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [pat.address]
+            send_mail(subject, message, from_email, to_list, fail_silently=False)
 
             return redirect('addapp')
         except:

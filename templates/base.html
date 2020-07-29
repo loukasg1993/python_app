@@ -28,7 +28,7 @@
                     <div class="nav-wrapper">
                         <form action="/edit/" method="get" style="margin: 0">
                             <div class="input-field">
-                                <div class="col s2 right">
+                                <div class="col l2 m2 s7 right">
                                     <input type="text" name="content" id="search" placeholder="Search by AMKA...">
 
                                 </div>
@@ -40,8 +40,11 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col s3 left">
-                        <a href="/" class="brand-logo"><i class="material-icons">enhanced_encryption</i>Medical Care</a>
+                     <div class="col s2 hide-on-med-and-up left">
+                        <a href="/" class="brand-logo left"><i class="material-icons">enhanced_encryption</i></a>
+                    </div>
+                    <div class="col l3 s2 left">
+                        <a href="/" class="brand-logo hide-on-small-only left"><i class="material-icons">enhanced_encryption</i>Medical Care</a>
                     </div>
                     <ul id="nav-mobile">
                         <!--                        <meta http-equiv="refresh" content="60"/>-->
@@ -54,10 +57,10 @@
 
                     </ul>
                 </div>
-                <div class="col s2">
-                    <div class="col s10 right">
+                <div class="col s2" style="text-align: right">
 
-                        <ul id='dropdown1' class='dropdown-content'>
+
+                        <ul id='dropdown1' class='dropdown-content' >
                             <li class="taber"><a href="/add/"><i class="material-icons left ">add_circle_outline</i>Add Patient</a>
 
                             <li class="divider" tabindex="-1"></li>
@@ -76,16 +79,16 @@
 
 
                         </ul>
-                        <ul class="nav-mobile">
-                            <div class="col s12">
-                                <li><a class="dropdown-trigger" data-target="dropdown1"><i
-                                        class="material-icons iconsa center">list</i></a>
-                                </li>
-                            </div>
-                        </ul>
 
 
-                    </div>
+                                <a class="dropdown-trigger right" data-target="dropdown1"><i
+                                        class="material-icons iconsa">list</i></a>
+
+
+
+
+
+
                 </div>
 
                 </div>
@@ -116,15 +119,12 @@
     {% block content %}
 
     <div class="row">
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4">
 
-            <div class="card z-depth-2 hoverable small card1">
+            <div class="card cards z-depth-2 hoverable small card1">
                 <div class="card-content">
                     <h4 align="center"><i class="material-icons">account_box</i> Patients</h4>
                     <h3 class="">{{patients}}</h3>
-<!--                    <p>Male : {{male}} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp-->
-<!--                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Female :-->
-<!--                        {{female}}</p>-->
 
                 </div>
 
@@ -136,8 +136,8 @@
 
             </div>
         </div>
-        <div class="col s12 m4">
-            <div class="card z-depth-2 hoverable small card2">
+        <div class="col s12 m6 l4">
+            <div class="card cards z-depth-2 hoverable small card2">
                 <div class="card-content">
                     <h4 align="center"><i class="material-icons">event</i> Available Date</h4>
                     <h3 class="datehome"><i class="material-icons"> event_available</i>{{available_date}}</h3>
@@ -151,8 +151,8 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m4">
-            <div class="card z-depth-2 hoverable small card3">
+        <div class="col s12 m6 l4">
+            <div class="card cards z-depth-2 hoverable small card3">
                 <div class="card-content ">
                     <h4 align="center"><i class="material-icons">colorize</i>Tomorrow's Dose</h4>
                     <h3><i class="material-icons"> opacity</i>{{count_dose}} MBq</h3>
@@ -265,20 +265,20 @@
     $('.tooltipped').tooltip();
   });
 </script>
-<script type="text/javascript">
+<!--<script type="text/javascript">-->
 
-    var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
-    // if zoom level is greater than 75
-    if (browserZoomLevel>80){
-        // find how much
-        zoom_level = 80
-        // add percentage symbol with value
-        zoom_percent = zoom_level+"%"
-        // adjust the browser zoom level
-        document.body.style.zoom = zoom_percent
-      }
+<!--    var browserZoomLevel = Math.round(window.devicePixelRatio * 100);-->
+<!--    // if zoom level is greater than 75-->
+<!--    if (browserZoomLevel>80){-->
+<!--        // find how much-->
+<!--        zoom_level = 80-->
+<!--        // add percentage symbol with value-->
+<!--        zoom_percent = zoom_level+"%"-->
+<!--        // adjust the browser zoom level-->
+<!--        document.body.style.zoom = zoom_percent-->
+<!--      }-->
 
-</script>
+<!--</script>-->
 
 </body>
 </html>

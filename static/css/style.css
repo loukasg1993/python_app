@@ -64,7 +64,11 @@ h2 {
     width: 100%;
     background-color: #cd5f3c !important;
 }
+.deletebuttonpat{
+    width: 100%;
+    background-color: #cd5f3c !important;
 
+}
 
 
 .col-xs-4{
@@ -81,13 +85,20 @@ h2 {
 }
 .dropdown-trigger{
 
-
+    text-align: right!important;
     background-color: #2196f3 !important;
-    width: 250% !important;
-
+    width: 50% !important;
+    /*#2196f3*/
 
 }
+.iconsa{
+    width: 42% !important;
+    text-align: right!important;
+}
+
 .iconsa:hover{
+
+    border-radius: 400px!important;
     background-color: #1f7cc2 !important;
     font-size: 35px !important;
 
@@ -118,6 +129,11 @@ h2 {
 
     /*color: white!important;*/
 
+
+}
+td{
+
+    text-align: center!important;
 
 }
 /*ul.dropdown-content .taber a{*/
@@ -168,8 +184,8 @@ ul.tabs .indicator {
     text-align: center!important;
 }
 .deleteapp{
-    width: 55%;!important;
-    left: 2.5cm !important;
+    width: 50%;!important;
+
 }
 .waves_update {
     width: 50% !important;
@@ -226,10 +242,11 @@ ul.tabs .indicator {
 
 }
 .plots{
+    margin-top: 1cm!important;
 
     border: 1px solid #469ee8 !important;
-    border-radius: 13px 13px 13px 13px !important;
-    padding: 40px!important;
+    border-radius: 30px 30px 30px 30px !important;
+
 }
 .plotheader{
      font-family: Calibri;
@@ -261,6 +278,7 @@ ul.tabs .indicator {
 }
 td{
     text-align: center!important;
+
 }
 th{
     position: sticky!important;
@@ -285,26 +303,26 @@ th{
 
 }
 .tabtext3{
-      position: absolute!important;
+
     color: #ffffff !important;
-    top: -15px!important;
-    margin-left:40px!important;
+    margin-bottom: 15px!important;
+
     text-align: center!important;
 }
 .tabtext{
     /*outline-color: #2893a1!important;*/
-    position: absolute!important;
+
     color: #ffffff !important;
-    top: -15px!important;
-    margin-left:30px!important;
+    margin-bottom: 15px!important;
+
+
     text-align: center!important;
 
 }
 .tabtext4{
-    position: absolute!important;
+
     color: #ffffff !important;
-    top: -15px!important;
-    margin-left:45px!important;
+    margin-bottom: 15px!important;
     text-align: center!important;
 }
 /*.plot3{*/
@@ -346,8 +364,16 @@ th{
     max-height: 100px!important;
 
 }
+.cards{
+    margin-top: 40px!important;
+
+
+    border-radius: 15px 15px 0px 0px !important;
+
+}
 .card{
-    height: 290px!important;
+
+
     border-radius: 15px 15px 0px 0px !important;
 
 }
@@ -407,8 +433,5 @@ th{
 }
 .floatingupdate{
     background-color: #2196f3 !important;
-
-}
-.navbars{
 
 }

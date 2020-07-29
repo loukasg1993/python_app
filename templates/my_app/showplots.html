@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block charts %}
+
 </br>
 </br>
 </br>
@@ -8,32 +9,32 @@
 
 
 
-<div class="row">
-    <div class="container">
-    <div class="col s12">
-        <ul id="tabs-swipe-demo" class="tabs">
-            <li class="tab col s3"><a  class="active" href="#plot13"><p class="tabtext">Body Mass Index</p></a></li>
-            <li class="tab col s3"><a  href="#plot25"><p class="tabtext">Dose for 2019</p></a></li>
-            <li class="tab col s3"><a  href="#plot4"><p class="tabtext3">Patient Ages</p></a></li>
-            <li class="tab col s3"><a  href="#plot5"><p class="tabtext4">3D/Density</p></a></li>
+
+
+    <div class="row col s12" style="margin: 0 auto; text-align: center">
+        <ul id="tabs-swipe-demo" class="tabs col s12" >
+            <li class="tab col s3"><a  class="active" href="#plot13" style="color: #ffffff">Body Mass Index</a></li>
+            <li class="tab col s3"><a  href="#plot25" style="color: #ffffff">Dose for 2019</a></li>
+            <li class="tab col s3"><a  href="#plot4" style="color: #ffffff">Patient Ages</a></li>
+            <li class="tab col s3"><a  href="#plot5" style="color: #ffffff">3D/Density</a></li>
 
         </ul>
+
     </div>
-    </div>
-    </div>
-    <div id="plot13" class="col s12">
+
+    <div id="plot13">
 
         <div class="row">
-            <div class="col s6">
-                <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data}}" alt=""
-                     height="500"
-                     ,width="500">
+            <div class="col s12 m12 l6">
+                <img class="plots" src="data:image/png;base64,{{data}}" alt=""
+                     height="475"
+                     ,width="475">
 
             </div>
-            <div class="col s6">
-                <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data3}}" alt=""
-                     height="500"
-                     ,width="500">
+            <div class="col s12 m12 l6">
+                <img class="plots" src="data:image/png;base64,{{data3}}" alt=""
+                     height="475"
+                     ,width="475">
             </div>
 
         </div>
@@ -41,54 +42,54 @@
 
 
     </div>
-    <div id="plot25" class="col s12">
+    <div id="plot25">
         <div class="row">
-            <div class="col s6">
+            <div class="col s12 m12 l6">
                 <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data2}}" alt=""
-                     height="500"
-                     ,width="500">
+                     height="475"
+                     ,width="475">
             </div>
-            <div class="col s6">
+            <div class="col s12 m12 l6">
             <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data5}}" alt=""
-                 height="500"
-                 ,width="500">
+                 height="475"
+                 ,width="475">
         </div>
 
         </div>
 
     </div>
 
-    <div id="plot4" class="col s12">
+    <div id="plot4">
         <div class="row">
-             <div class="col s6">
+             <div class="col s12 m12 l6">
             <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data6}}" alt=""
-                 height="500"
-                 ,width="500">
+                 height="475"
+                 ,width="475">
         </div>
-         <div class="col s6">
+         <div class="col s12 m12 l6">
                 <img class="plots" style="display: inline-block" src="data:image/png;base64,{{data4}}" alt=""
-                     height="500"
-                     ,width="500">
+                     height="475"
+                     ,width="475">
             </div>
 
 
     </div>
         </div>
- <div id="plot5" class="col s12">
+ <div id="plot5">
         <div class="row">
 
-            <div class="col s12">
-                <img class="plots" style="margin-left: 210px" src="data:image/png;base64,{{data11}}" alt=""
-                     height="570"
-                     ,width="600">
+            <div class="col s12" style="text-align: center">
+                <img class="plots" src="data:image/png;base64,{{data11}}" alt=""
+                     height="400"
+                     ,width="400">
 
             </div>
             </div>
 
-     <div class="col s12">
-                <img class="plots" style="margin-left: 270px" src="data:image/png;base64,{{data10}}" alt=""
-                     height="570"
-                     ,width="600">
+     <div class="col s12" style="text-align: center; margin: 0 auto; width: 50%">
+                <img class="plots" src="data:image/png;base64,{{data10}}" alt=""
+                     height="400"
+                     ,width="400">
 
             </div>
      </div>

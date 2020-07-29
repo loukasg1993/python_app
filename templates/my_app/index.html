@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
+ <h3 id="patientsview">Patients Personal Information</h3></br>
+<div class="col s12 center" style="overflow: auto">
 <table class="highlight">
 
-    <tr>
+<!--    <tr>-->
 
-        <p>
-        <h3 id="patientsview">Patients Personal Information</h3></p></br>
+<!--        <p>-->
+<!--       </p></br>-->
 
-    </tr>
+<!--    </tr>-->
 
     <thead>
     <tr class="center finds">
@@ -31,6 +33,7 @@
 
     </tr>
      </thead>
+    <tbody>
     <br>
     {% for item in personal_info%}
     <tr>
@@ -49,7 +52,7 @@
         <td>{{item.address}}</td>
         <td>
             <form action="delete/{{ item.id }}/" method="POST">
-                <button type="submit" class="waves-effect waves-red btn">
+                <button type="submit" class="waves-effect waves-red deletebuttonpat btn">
                     Delete
                 </button>
 
@@ -81,6 +84,7 @@
     </tbody>
 
 </table>
+ </div>
 </br>
 <div class="row">
 <div class="pagination right">
