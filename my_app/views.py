@@ -779,7 +779,7 @@ def list(request):
 def dates1():
     x = appointment.objects.latest('date')
     last_date = x.date
-    current_date = datetime.now(timezone.utc)
+    current_date = datetime.now()
     y = last_date - current_date
     day_diff = y.days
     last_hour = last_date.hour
