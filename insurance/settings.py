@@ -32,7 +32,7 @@ SECRET_KEY = 'aid!k(kz6mj3nf&s2c@ixi+$p_tn3s+yl@jef+eapcs$adzysl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['34.78.215.81']
 
 
 # Application definition
@@ -82,14 +82,20 @@ WSGI_APPLICATION = 'insurance.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'insurances',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT':'3306'
-    }
+	'default': {
+    	'ENGINE': os.getenv('DATABASE_ENGINE', 'django.db.backends.mysql'),
+      'NAME': os.getenv('DATABASE_NAME', 'med_care'),
+    	'USER': os.getenv('DATABASE_USER', 'root'),
+    	'PASSWORD': os.getenv('DATABASE_PASSWORD', 'password'),
+    	'HOST': os.getenv('DATABASE_SERVICE_HOST', '127.0.0.1'),
+    	'PORT': os.getenv('DATABASE_SERVICE_PORT', 3306)
+    	#'NAME': 'app_db',
+    	#'USER': 'app_db_user',
+    	#'PASSWORD': 'app_db_pw',
+    	#'HOST': 'mysql',
+    	#'PORT': '3306'
+
+	}
 }
 
 
@@ -97,18 +103,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+	{
+    	'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+	},
+	{
+    	'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+	},
+	{
+    	'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+	},
+	{
+    	'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+	},
 ]
 
 
@@ -117,17 +123,21 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Etc/GMT-3'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+# 'http://34.78.155.148/'
+STATIC_URL = 'https://storage.googleapis.com/python_django_apps/'
+STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+MY_POD_NAME = os.getenv('MY_POD_NAME', 'local')
+MY_POD_NAMESPACE = os.getenv('MY_POD_NAMESPACE', 'local')
+MY_POD_IP = os.getenv('MY_POD_IP', 'localhost')
