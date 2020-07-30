@@ -106,7 +106,13 @@
                 </div>
 
 
-                    <div class="col s6 left">
+                    <div class="col l6 m6 s12 hide-on-small-only" style="text-align: center">
+
+                        <button class="waves-effect waves-yellow waves_update btn">
+                            <span class="text">Update Patient</span>
+                        </button>
+                    </div>
+                <div class="col l6 m6 s12 hide-on-med-and-up" style="text-align: center">
 
                         <button class="waves-effect waves-yellow waves_update btn">
                             <span class="text">Update Patient</span>
@@ -119,10 +125,16 @@
 
 
         <form action="/appointment/{{form.initial.id}}" method="POST" class="contact-form">
-       <div style="float: right">
+       <div class="col l6 m6 s12 hide-on-small-only" style="text-align: center;">
 
         <button class="waves-effect waves-green makeapp btn">
-            <span class="text">Make Appointment</span>
+            <span class="text">Book Appointment</span>
+        </button>
+       </div>
+            <div class="col l6 m6 s12 hide-on-med-and-up" style="text-align: center; margin-top: 10px;">
+
+        <button class="waves-effect waves-green makeapp btn">
+            <span class="text">Book Appointment</span>
         </button>
        </div>
        </form>
