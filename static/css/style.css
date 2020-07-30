@@ -107,7 +107,12 @@ h2 {
 .waves-green {
     width: 100% !important;
     background-color: #2893a1 !important;
-    right: 10px !important;
+    /*right: 10px !important;*/
+
+}
+.makeapp{
+    width: 50% !important;
+    background-color: #e7dd46 !important;
 
 }
 .waves-yellow {
