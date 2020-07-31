@@ -103,7 +103,12 @@ h2 {
     font-size: 35px !important;
 
 }
-
+.inputsearch{
+    border: 1px solid !important;
+    border-radius: 20px!important;
+    border-color: #ffffff !important;
+    text-align: center!important;
+}
 .waves-green {
     width: 100% !important;
     background-color: #2893a1 !important;
