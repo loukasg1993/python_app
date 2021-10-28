@@ -52,7 +52,7 @@ Deployed in the Cloud with the use of Docker and Kubernetes as orchestrator.
 
 ## What's next?
 
-- [ ] Add more statistics
+- [ ] Provide more statistics and graphs
 
 - [ ] Change UI to a more user friendly version
 
