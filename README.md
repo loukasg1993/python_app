@@ -13,6 +13,8 @@ Deployed in the Cloud with the use of Docker and Kubernetes as orchestrator.
 - Access patient's personal information
 - History records
 - Statistic Graphs (Pie chart, Scatter plot (3D), Histogram, Bar chart, Multiple subplots)
+- Download patient's info in Excel or PDF
+- Download next day dose in Excel or PDF
 - Pagination
 
 ## Screenshots
@@ -21,7 +23,7 @@ Deployed in the Cloud with the use of Docker and Kubernetes as orchestrator.
 <p align="center"><img src="https://user-images.githubusercontent.com/60218987/139299678-ad549fad-c8d2-4b45-af93-7c31a7680088.png" width="75%" height="70%"/></p>
 
 <p align="center">Patient Info</p>
-<p align="center"><img src="https://user-images.githubusercontent.com/60218987/139300157-60178f3e-59ce-452c-b31e-6ddb417c7ad9.png" width="75%" height="35%"/></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/60218987/139300157-60178f3e-59ce-452c-b31e-6ddb417c7ad9.png" width="75%" height="25%"/></p>
 
 <p align="center">Schedule Appointment</p>
 <p align="center"><img src="https://user-images.githubusercontent.com/60218987/139301699-12197197-3e4b-45a8-bd19-9b7e82590177.png" width="75%" height="35%"/></p>
