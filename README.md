@@ -13,8 +13,8 @@ Deployed in the Cloud with the use of Docker and Kubernetes as orchestrator.
 - Access patient's personal information
 - History records
 - Statistic Graphs (Pie chart, Scatter plot (3D), Histogram, Bar chart, Multiple subplots)
-- Download patient's info in Excel or PDF
-- Download next day dose in Excel or PDF
+- Download patient's info in Csv or Pdf file
+- Download next day dose in Csv or Pdf file
 - Pagination
 
 ## Screenshots
