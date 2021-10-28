@@ -32,6 +32,22 @@ Deployed in the Cloud with the use of Docker and Kubernetes as orchestrator.
 <p align="center">Statistics and Graphs</p>
 <p align="center"><img src="https://user-images.githubusercontent.com/60218987/139302057-275b0706-5fba-445f-819e-9d0cb75428bc.png" width="75%" height="35%"/></p>
 
+## Libraries
+
+- Django
+- Datetime
+- Matplotlib
+- Urllib
+- Base64
+- Pandas
+- Sys
+- Squarify
+- Seaborn
+- Csv
+- Xlwt
+- io
+- 
+
 ## What's next?
 
 - [ ] Add more statistics
