@@ -46,7 +46,7 @@ Deployed in the Cloud with the use of Docker and Kubernetes as orchestrator.
 - Csv
 - Xlwt
 - io
-- 
+- Reportlab
 
 ## What's next?
 
