@@ -13,8 +13,8 @@ Deployed in the Cloud with the use of Docker and Kubernetes as orchestrator.
 - Access patient's personal information
 - History records
 - Statistic Graphs (Pie chart, Scatter plot (3D), Histogram, Bar chart, Multiple subplots)
-- Download patient's info in Csv or Pdf file
-- Download next day dose in Csv or Pdf file
+- Download patient's info in Csv/Pdf file
+- Download next day dose in Csv/Pdf file
 - Pagination
 
 ## Screenshots
@@ -47,6 +47,7 @@ Deployed in the Cloud with the use of Docker and Kubernetes as orchestrator.
 - Seaborn
 - Csv
 - Xlwt
+- mysqlclient
 - io
 - Reportlab
 
